@@ -20,13 +20,13 @@ end
  
 end
  
-Woodchuck.new
-Woodchuck.new
-Woodchuck.new
-Woodchuck.new
+rand(1..100).times {Woodchuck.new}
  
 Woodchuck::WOODCHUCKS.each do |woodchuck|
-woodchuck.chuck_wood
+ rand(1..100).times {woodchuck.chuck_wood}
 end
  
+total = Woodchuck::WOODCHUCKS.inject(0) {|sum, woodchuck| sum + woodchuck.chuck_count}
+
 puts Woodchuck::WOODCHUCKS.inspect
+puts "total wood chucked is #{total}"
